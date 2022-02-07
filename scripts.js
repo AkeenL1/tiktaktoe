@@ -1,6 +1,6 @@
 const gameBoard = (function()
 {
-   var board = [
+   let board = [
        ["","",""],
        ["","",""],
        ["","",""]
@@ -378,6 +378,14 @@ resetBtn.addEventListener("click",function()
 {
     yScore = 0;
     xScore = 0;
+    const gboard = gameBoard.getBoard();
+    for(let i = 0;i<3;i++)
+    {
+        for(let j = 0;j<3;j++)
+        {
+            gboard[i][j] = "";
+        }
+    }
     display.displayBoard();
 })
 
