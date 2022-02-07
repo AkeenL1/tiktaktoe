@@ -26,18 +26,21 @@ const xWins = document.getElementById("xWinner");
 xWins.addEventListener("click",function()
 {
     xWins.style.display = "none";
+    display.displayBoard();
 });
 
 const oWins = document.getElementById("oWinner");
 oWins.addEventListener("click",function()
 {
     oWins.style.display = "none";
+    display.displayBoard();
 });
 
 const draw = document.getElementById("draw");
 draw.addEventListener("click",function()
 {
     draw.style.display = "none";
+    display.displayBoard();
 });
 const display = (function()
 {
@@ -272,7 +275,6 @@ const play = (function()
                 board = gameBoard.createBoard();
                 moveCount = 0;
                 xScore++;
-                display.displayBoard();
                 xWins.style.display = "block"
                 uLeft = new Boolean(false);
                 uMid = new Boolean(false);
@@ -292,7 +294,6 @@ const play = (function()
                 moveCount = 0;
                 yScore++;
                 oWins.style.display = "block";
-                display.displayBoard();
                 uLeft = new Boolean(false);
                 uMid = new Boolean(false);
                 uRight = new Boolean(false);
@@ -310,7 +311,6 @@ const play = (function()
                 board = gameBoard.createBoard();
                 moveCount = 0;
                 draw.style.display = "block";
-                display.displayBoard();
                 uLeft = new Boolean(false);
                 uMid = new Boolean(false);
                 uRight = new Boolean(false);
