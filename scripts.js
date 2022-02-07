@@ -96,6 +96,8 @@ const player = function(a)
     this.letter = letter;
     return;
 }
+
+let moveCount = 0;
 const play = (function()
 {
     var board = gameBoard.getBoard();
@@ -104,8 +106,6 @@ const play = (function()
     const box = document.getElementsByClassName("box");
     console.log(player1.letter)
     var player1Turn = new Boolean(true);
-    var uLeft = new Boolean(true);
-    var moveCount = 0;
     for(var i = 0;i<box.length;i++)
     {
         box[i].addEventListener("click",function()
@@ -124,8 +124,10 @@ const play = (function()
                             board[0][0] = player2.letter;
                         }
                         player1Turn = !player1Turn;
+                        console.log(uLeft);
                         uLeft = !uLeft;
                         moveCount++;
+                        console.log(uLeft);
                     }
                     display.displayBoard();
                     break;
@@ -386,6 +388,17 @@ resetBtn.addEventListener("click",function()
             gboard[i][j] = "";
         }
     }
+    uLeft = new Boolean(true);
+    moveCount = 0;
+    uMid = new Boolean(false);
+    uRight = new Boolean(false);
+    mLeft = new Boolean(false);
+    mMid = new Boolean(false);
+    mRight = new Boolean(false);
+    bLeft = new Boolean(false);
+    bMid = new Boolean(false);
+    bRight = new Boolean(false);
+    player1Turn = new Boolean(true);
     display.displayBoard();
 })
 
